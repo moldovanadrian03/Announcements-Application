@@ -7,12 +7,19 @@ import { Announcement } from './announcement';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'announcements-app';
 
-  announcement: Announcement[] = [{
-    title:"title: adsa",
+  announcement: Announcement[] =[
+  {
+    title: "title: adsa",
     author: "author: asdsa",
-    message:"message: dasd",
+    message: "message: dasd",
     category: {id: "1", name: "asadad"}
+  },
+  {
+    title:"title: adsadsad",
+    author: "author: asdsaadsadsa",
+    message:"message: dasddasdsa",
+    category: {id: "2", name: "asadadadsa"}
   }];
+
 }
