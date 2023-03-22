@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Announcement } from './announcement';
+import { Category } from './category';
 
 @Component({
   selector: 'app-root',
@@ -22,4 +23,5 @@ export class AppComponent {
     category: {id: "2", name: "asadadadsa"}
   }];
 
+  selectedCategory: Category;
 }
