@@ -7,7 +7,7 @@ import { Category } from '../category';
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent {
-  categorie: Category[] = [
+  categories: Category[] = [
     {
       id: '1',
       name: 'Course'
