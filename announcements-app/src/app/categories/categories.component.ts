@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Category } from '../category';
 
 @Component({
@@ -20,4 +20,11 @@ export class CategoriesComponent {
       id: '3',
       name: 'Laboratory'
     }];
+  @Output()
+  selectedCategoryEmitter = new EventEmitter<Category>();
+
+    clickOnCategory(category: Category):void {
+      console.log(category?.name);
+      this.selectedCategoryEmitter.emit(category);
+    }
 }

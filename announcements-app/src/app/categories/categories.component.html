@@ -1,7 +1,7 @@
 <div class="buttons">
 
   <div *ngFor="let category of categories">
-    <button mat-fab extended color="primary">{{category.name}}</button>
+    <button (click)="clickOnCategory(category)" extended color="primary">{{category.name}}</button>
   </div>
 
 </div>
