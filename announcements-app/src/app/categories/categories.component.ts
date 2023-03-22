@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Category } from '../category';
 
 @Component({
   selector: 'app-categories',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent {
-
+  categorie: Category[] = [
+    {
+      id: '1',
+      name: 'Course'
+    },
+    {
+      id: '2',
+      name: 'General'
+    },
+    {
+      id: '3',
+      name: 'Laboratory'
+    }];
 }
