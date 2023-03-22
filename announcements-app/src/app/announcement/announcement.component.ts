@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-announcement',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./announcement.component.scss']
 })
 export class AnnouncementComponent {
-  message = 'message';
-  title = 'title';
-  author = 'author';
+  @Input() message: string;
+  @Input() title: string;
+  @Input() author: string;
 }
