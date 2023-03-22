@@ -9,5 +9,10 @@ import { Announcement } from './announcement';
 export class AppComponent {
   title = 'announcements-app';
 
-  announcement: Announcement;
+  announcement: Announcement[] = [{
+    title:"title: adsa",
+    author: "author: asdsa",
+    message:"message: dasd",
+    category: {id: "1", name: "asadad"}
+  }];
 }
