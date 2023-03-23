@@ -9,6 +9,8 @@ import { MatButtonModule}  from '@angular/material/button';
 import { ByAuthorPipe } from './by-author.pipe';
 import { AddAnnouncementFormComponent } from './add-announcement-form/add-announcement-form.component';
 import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
