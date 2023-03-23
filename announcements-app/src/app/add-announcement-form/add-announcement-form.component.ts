@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Announcement } from '../announcement';
 import { Category } from '../category';
 
 @Component({
@@ -26,4 +27,16 @@ export class AddAnnouncementFormComponent {
       id: '3',
       name: 'General'
     }];
+
+    addAnnouncement():void {
+      let announcement: Announcement = {
+        id: undefined,
+        title: this.title,
+        author: this.author,
+        imageUrl: this.imageUrl,
+        message: this.message,
+        category: this.selectedCategory
+      }
+      console.log(announcement);
+    }
 }

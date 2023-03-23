@@ -1,4 +1,5 @@
 <div>
+  <app-add-announcement-form></app-add-announcement-form>
   <app-categories (selectedCategoryEmitter)="filterAnnouncementBasedOnCategory($event)"></app-categories>
 </div>
 <div *ngFor="let fAnnouncement of filteredAnnouncements" class="app-container">
