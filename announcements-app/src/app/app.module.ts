@@ -7,17 +7,21 @@ import { AnnouncementComponent } from './announcement/announcement.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { MatButtonModule}  from '@angular/material/button';
 import { ByAuthorPipe } from './by-author.pipe';
+import { AddAnnouncementFormComponent } from './add-announcement-form/add-announcement-form.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     AnnouncementComponent,
     CategoriesComponent,
-    ByAuthorPipe
+    ByAuthorPipe,
+    AddAnnouncementFormComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
