@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
     AnnouncementComponent,
     CategoriesComponent,
     ByAuthorPipe,
-    AddAnnouncementFormComponent
+    AddAnnouncementFormComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
