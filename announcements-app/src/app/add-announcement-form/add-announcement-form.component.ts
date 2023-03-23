@@ -9,4 +9,5 @@ export class AddAnnouncementFormComponent {
   title: string;
   author: string;
   imageUrl: string;
+  message: string;
 }
