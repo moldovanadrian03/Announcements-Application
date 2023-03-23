@@ -1,16 +1,16 @@
 <form>
   <mat-form-field class="full-width">
     <mat-label>Title</mat-label>
-    <input matInput placeholder="Title" [(ngModel)]="title" name="title">
+    <input matInput placeholder="Title" [(ngModel)]="title" name="title" required>
   </mat-form-field>
 
   <mat-form-field class="full-width">
     <mat-label>Author</mat-label>
-    <input matInput placeholder="Author" [(ngModel)]="author" name="author">
+    <input matInput placeholder="Author" [(ngModel)]="author" name="author" required>
   </mat-form-field>
 
   <mat-form-field class="full-width">
     <mat-label>ImageUrl</mat-label>
-    <input matInput placeholder="ImageUrl" [(ngModel)]="imageUrl" name="imageUrl">
+    <input matInput placeholder="ImageUrl" [(ngModel)]="imageUrl" name="imageUrl" required>
   </mat-form-field>
 </form>
