@@ -7,4 +7,5 @@ export interface Announcement {
   author: string;
 
   category: Category;
+  imageUrl: string;
 }

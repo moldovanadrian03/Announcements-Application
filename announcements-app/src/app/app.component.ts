@@ -15,28 +15,32 @@ export class AppComponent {
     title: "title: adsa",
     author: "author: asdsa",
     message: "message: dasd",
-    category: {id: "1", name: "asadad"}
+    category: {id: "1", name: "asadad"},
+    imageUrl: '03vision.info'
   },
   {
     id: '2',
     title:"title: adsadsad",
     author: "author: asdsaadsadsa",
     message:"message: dasddasdsa",
-    category: {id: "2", name: "asadadadsa"}
+    category: {id: "2", name: "asadadadsa"},
+    imageUrl: '03vision.info'
   },
   {
     id: '3',
     title:"Curs3",
     author: "🌪️",
     message:"message: dasddasdsa",
-    category: {id: "2", name: "asadadadsa"}
+    category: {id: "2", name: "asadadadsa"},
+    imageUrl: '03vision.info'
   },
   {
     id: '4',
     title:"Curs4",
     author: "🌪️",
     message:"message: dasddasdsa",
-    category: {id: "3", name: "adssa"}
+    category: {id: "3", name: "adssa"},
+    imageUrl: '03vision.info'
   }];
   add: any;
 
