@@ -18,4 +18,14 @@
     <mat-label>Leave a message</mat-label>
     <textarea matInput placeholder="..." [(ngModel)]="message" name="message"></textarea>
   </mat-form-field>
+
+  <h4>Select category</h4>
+  <mat-form-field appearance="fill">
+    <mat-label>Category</mat-label>
+    <mat-select [(ngModel)]="selectedCategory" name="selectedCategory">
+      <mat-option *ngFor="let category of categories" [value]="category.id">
+        {{category.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 </form>
