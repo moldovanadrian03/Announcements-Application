@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-announcement-form.component.scss']
 })
 export class AddAnnouncementFormComponent {
-
+  title: string;
+  author: string;
+  imageUrl: string;
 }
