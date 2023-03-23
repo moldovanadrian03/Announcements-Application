@@ -1,7 +1,11 @@
 <div>
-  <app-add-announcement-form></app-add-announcement-form>
   <app-categories (selectedCategoryEmitter)="filterAnnouncementBasedOnCategory($event)"></app-categories>
 </div>
+
+<div>
+  <button mat-fab extended color="primary" [routerLink]="'/add'">Add Annoucement</button>
+</div>
+
 <div *ngFor="let fAnnouncement of filteredAnnouncements" class="app-container">
   <div class="announcements">
     <app-announcement [message] = fAnnouncement.message [title] = fAnnouncement.title [author] = fAnnouncement.author></app-announcement>
