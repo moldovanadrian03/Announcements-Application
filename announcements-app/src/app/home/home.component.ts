@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Announcement } from '../announcement';
 import { Category } from '../category';
 import { AnnouncementService } from '../services/announcement.service';
@@ -8,7 +8,7 @@ import { AnnouncementService } from '../services/announcement.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
   announcement: Announcement[] =[
     {
       id: '1',
@@ -48,6 +48,10 @@ export class HomeComponent {
     filteredAnnouncements: Announcement[] = this.announcement;
 
     constructor(private announcementService: AnnouncementService) {}
+
+    ngOnInit(): void {
+      this.announcementService.serviceCall();
+    }
 
     filterAnnouncementBasedOnCategory(category: Category){
       if(!category){
