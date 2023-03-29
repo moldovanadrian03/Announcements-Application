@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Announcement } from '../announcement';
 import { Category } from '../category';
 import { AnnouncementService } from '../services/announcement.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-announcement-form',
@@ -29,7 +30,7 @@ export class AddAnnouncementFormComponent {
       name: 'General'
     }];
 
-    constructor(private announcementService: AnnouncementService) {}
+    constructor(private announcementService: AnnouncementService, private router: Router) {}
 
     addAnnouncement():void {
       let announcement: Announcement = {
@@ -42,5 +43,6 @@ export class AddAnnouncementFormComponent {
       }
       console.log(announcement);
       this.announcementService.addAnnouncement(announcement);
+      this.router.navigateByUrl('');
     }
 }
