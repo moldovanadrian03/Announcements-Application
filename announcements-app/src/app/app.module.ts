@@ -13,6 +13,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
+import {MatCardModule} from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     MatInputModule,
     MatSelectModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
