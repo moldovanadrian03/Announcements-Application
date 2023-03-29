@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Announcement } from '../announcement';
 import { Category } from '../category';
+import { AnnouncementService } from '../services/announcement.service';
 
 @Component({
   selector: 'app-home',
@@ -45,6 +46,8 @@ export class HomeComponent {
 
     selectedCategory: Category;
     filteredAnnouncements: Announcement[] = this.announcement;
+
+    constructor(private announcementService: AnnouncementService) {}
 
     filterAnnouncementBasedOnCategory(category: Category){
       if(!category){
