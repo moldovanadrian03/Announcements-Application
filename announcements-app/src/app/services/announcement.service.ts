@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Announcement } from '../announcement';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -44,7 +45,7 @@ export class AnnouncementService {
     console.log("Service was called.");
   }
 
-  getAnnouncements(): Announcement[] {
-    return this.announcement;
+  getAnnouncements(): Observable<Announcement[]> {
+    return of(this.announcement);
   }
 }

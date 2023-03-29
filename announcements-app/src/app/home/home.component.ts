@@ -19,9 +19,13 @@ export class HomeComponent implements OnInit{
 
     ngOnInit(): void {
       this.announcementService.serviceCall();
-      this.announcement = this.announcementService.getAnnouncements();
 
-      this.filteredAnnouncements = this.announcement;
+      this.announcementService.getAnnouncements().subscribe(announcements => {
+        console.log("Announcements list: ", announcements);
+        this.announcement = announcements;
+        this.filteredAnnouncements = this.announcement;
+      });
+
     }
 
     filterAnnouncementBasedOnCategory(category: Category){
