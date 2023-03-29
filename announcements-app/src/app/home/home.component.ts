@@ -41,8 +41,7 @@ export class HomeComponent implements OnInit{
       message:"message: dasddasdsa",
       category: {id: "3", name: "adssa"},
       imageUrl: '03vision.info'
-    }];
-    add: any;
+    }];    add: any;
 
     selectedCategory: Category;
     filteredAnnouncements: Announcement[] = this.announcement;
