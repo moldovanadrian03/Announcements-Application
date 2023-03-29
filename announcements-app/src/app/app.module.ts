@@ -14,6 +14,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import {MatCardModule} from '@angular/material/card';
+import { EditAnnouncementFormComponent } from './edit-announcement-form/edit-announcement-form.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {MatCardModule} from '@angular/material/card';
     CategoriesComponent,
     ByAuthorPipe,
     AddAnnouncementFormComponent,
-    HomeComponent
+    HomeComponent,
+    EditAnnouncementFormComponent
   ],
   imports: [
     BrowserModule,
