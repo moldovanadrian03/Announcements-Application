@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Announcement } from '../announcement';
 import { Observable, of } from 'rxjs';
+import { Category } from '../category';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnnouncementService {
-  announcement: Announcement[] =[
+  announcements: Announcement[] =[
     {
       id: '1',
       title: "title: adsa",
@@ -46,10 +47,34 @@ export class AnnouncementService {
   }
 
   getAnnouncements(): Observable<Announcement[]> {
-    return of(this.announcement);
+    return of(this.announcements);
+  }
+
+  get(id: number){
+    return this.announcements[id];
+  }
+
+  getId(announcement: Announcement) {
+    return this.announcements.indexOf(announcement);
   }
 
   addAnnouncement(announcement: Announcement) {
-    this.announcement.push(announcement);
+    //this method will add an annoucement to the array an return the id of the announcement
+    //where the id = index
+    let newLength = this.announcements.push(announcement);
+    return newLength - 1;
+  }
+
+  update(id: number, title: string, author: string, message: string, category: Category, imageUrl: string) {
+    let announcement = this.announcements[id];
+    announcement.title = title;
+    announcement.author = author;
+    announcement.message = message;
+    announcement.category = category;
+    announcement.imageUrl = imageUrl;
+  }
+
+  delete(id: number) {
+    this.announcements.splice(id, 1);
   }
 }
