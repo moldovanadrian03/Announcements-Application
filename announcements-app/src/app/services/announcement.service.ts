@@ -48,4 +48,8 @@ export class AnnouncementService {
   getAnnouncements(): Observable<Announcement[]> {
     return of(this.announcement);
   }
+
+  addAnnouncement(announcement: Announcement) {
+    this.announcement.push(announcement);
+  }
 }

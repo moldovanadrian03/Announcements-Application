@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Announcement } from '../announcement';
 import { Category } from '../category';
+import { AnnouncementService } from '../services/announcement.service';
 
 @Component({
   selector: 'app-add-announcement-form',
@@ -28,6 +29,8 @@ export class AddAnnouncementFormComponent {
       name: 'General'
     }];
 
+    constructor(private announcementService: AnnouncementService) {}
+
     addAnnouncement():void {
       let announcement: Announcement = {
         id: undefined,
@@ -38,5 +41,6 @@ export class AddAnnouncementFormComponent {
         category: this.selectedCategory
       }
       console.log(announcement);
+      this.announcementService.addAnnouncement(announcement);
     }
 }
