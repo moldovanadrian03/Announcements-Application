@@ -41,7 +41,7 @@ export class AddAnnouncementFormComponent {
         message: this.message,
         category: this.selectedCategory
       }
-      console.log(announcement);
+      console.log("Saved the announcement: ",announcement);
       this.announcementService.addAnnouncement(announcement);
       this.router.navigateByUrl('');
     }
