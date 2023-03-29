@@ -6,4 +6,8 @@ import { Injectable } from '@angular/core';
 export class AnnouncementService {
 
   constructor() { }
+
+  serviceCall(){
+    console.log("Service was called.");
+  }
 }
