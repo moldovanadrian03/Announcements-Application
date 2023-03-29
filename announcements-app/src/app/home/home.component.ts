@@ -9,16 +9,19 @@ import { AnnouncementService } from '../services/announcement.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit{
-  announcement: Announcement[];
+    announcement: Announcement[];
     add: any;
 
     selectedCategory: Category;
-    filteredAnnouncements: Announcement[] = this.announcement;
+    filteredAnnouncements: Announcement[];
 
     constructor(private announcementService: AnnouncementService) {}
 
     ngOnInit(): void {
       this.announcementService.serviceCall();
+      this.announcement = this.announcementService.getAnnouncements();
+
+      this.filteredAnnouncements = this.announcement;
     }
 
     filterAnnouncementBasedOnCategory(category: Category){
