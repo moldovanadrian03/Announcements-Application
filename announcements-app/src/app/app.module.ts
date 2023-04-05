@@ -14,7 +14,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import {MatCardModule} from '@angular/material/card';
-
+import { HttpClientModule } from '@angular/common/http';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import {MatCardModule} from '@angular/material/card';
     MatInputModule,
     MatSelectModule,
     AppRoutingModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,14 @@
-<div class="announcement-container">
-  <p class="message">{{message}}</p>
-  <p class="title">{{title}}</p>
-  <p class="author">{{author | byAuthor}}</p>
-</div>
+<mat-card class="announcement-container">
+  <mat-card-header class="header-container">
+    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+    <img mat-card-image src="{{ imageUrl }}" alt="Photo of a Shiba Inu">
+  </mat-card-header>
+
+  <div class="body-container">
+    <p class="message">{{message}}</p>
+    <p class="title">{{title}}</p>
+    <p class="author">{{author | byAuthor}}</p>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+</mat-card>
+

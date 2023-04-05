@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Announcement } from '../announcement';
 import { Category } from '../category';
 import { AnnouncementService } from '../services/announcement.service';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +11,14 @@ import { AnnouncementService } from '../services/announcement.service';
 })
 export class HomeComponent implements OnInit{
     announcement: Announcement[];
+    noteId: number;
+    new: boolean;
     add: any;
 
     selectedCategory: Category;
     filteredAnnouncements: Announcement[];
 
-    constructor(private announcementService: AnnouncementService) {}
+    constructor(private announcementService: AnnouncementService, private router: Router) {}
 
     ngOnInit(): void {
       this.announcementService.serviceCall();

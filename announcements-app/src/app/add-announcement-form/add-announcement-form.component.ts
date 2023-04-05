@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Announcement } from '../announcement';
 import { Category } from '../category';
 import { AnnouncementService } from '../services/announcement.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-announcement-form',
@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-announcement-form.component.scss']
 })
 export class AddAnnouncementFormComponent {
+  announcement: Announcement[];
   title: string;
   author: string;
   imageUrl: string;
