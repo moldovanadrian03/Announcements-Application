@@ -49,5 +49,47 @@
       font-weight: 600;
     }
   }
+  .x-button {
+    position: absolute;
+    //1 px from the top and 1px from the right side
+    top: 3px;
+    right: 4px;
 
+    // height: 34px;
+    // width: 34px;
+
+    background-color: pink;
+    // background-image: url('../../assets/delete_icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border-radius: 25px;
+
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+
+    //the button is hidden by default
+    opacity: 0;
+    transform: scale(0.35);
+
+    &:hover {
+      background-color: darken(pink, 3%);
+    }
+
+    //on click
+    &:active {
+      background-color: darken(pink, 7%);
+    }
+  }
+  &:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 4px rgba($color: #FFCACA, $alpha: 0.6);
+
+    .x-button {
+      opacity: 1;
+      transform: scale(0.9);
+
+      transition-delay: 0.35s;
+    }
+  }
 }
+

@@ -2,7 +2,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { Category } from "./category";
 
 export interface Announcement {
-  id: number;
+  id: string;
   title: string;
   message: string;
   author: string;

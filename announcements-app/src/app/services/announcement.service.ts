@@ -9,84 +9,102 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class AnnouncementService {
   baseURL = "https://newsapi20221108120432.azurewebsites.net/api/Announcements";
-  announcements: Announcement[] =[
-    {
-      id: 1,
-      title: "title: adsa",
-      author: "author: asdsa",
-      message: "message: dasd",
-      category: {id: "1", name: "asadad"},
-      imageUrl: '03vision.info'
-    },
-    {
-      id: 2,
-      title:"title: adsadsad",
-      author: "author: asdsaadsadsa",
-      message:"message: dasddasdsa",
-      category: {id: "2", name: "asadadadsa"},
-      imageUrl: '03vision.info'
-    },
-    {
-      id: 3,
-      title:"Curs3",
-      author: "🌪️",
-      message:"message: dasddasdsa",
-      category: {id: "2", name: "asadadadsa"},
-      imageUrl: '03vision.info'
-    },
-    {
-      id: 4,
-      title:"Curs4",
-      author: "🌪️",
-      message:"message: dasddasdsa",
-      category: {id: "3", name: "adssa"},
-      imageUrl: '03vision.info'
-    }];
+
+  readonly httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+    })
+  };
+
+
+  // announcements: Announcement[] =[
+  //   {
+  //     id: 1,
+  //     title: "title: adsa",
+  //     author: "author: asdsa",
+  //     message: "message: dasd",
+  //     category: {id: "1", name: "asadad"},
+  //     imageUrl: '03vision.info'
+  //   },
+  //   {
+  //     id: 2,
+  //     title:"title: adsadsad",
+  //     author: "author: asdsaadsadsa",
+  //     message:"message: dasddasdsa",
+  //     category: {id: "2", name: "asadadadsa"},
+  //     imageUrl: '03vision.info'
+  //   },
+  //   {
+  //     id: 3,
+  //     title:"Curs3",
+  //     author: "🌪️",
+  //     message:"message: dasddasdsa",
+  //     category: {id: "2", name: "asadadadsa"},
+  //     imageUrl: '03vision.info'
+  //   },
+  //   {
+  //     id: 4,
+  //     title:"Curs4",
+  //     author: "🌪️",
+  //     message:"message: dasddasdsa",
+  //     category: {id: "3", name: "adssa"},
+  //     imageUrl: '03vision.info'
+  //   }];
   constructor(private httpClient: HttpClient) { }
 
   serviceCall(){
     console.log("Service was called.");
   }
 
-  getAnnouncements() {
-    return of(this.announcements);
-  }
-  //8
-  getAnn(): Observable<Announcement[]> {
-    return this.httpClient.get<Announcement[]>(this.baseURL);
-  }
+    //8
+    getAnnouncements(): Observable<Announcement[]> {
+      console.log("Server Announcements: ");
+      return this.httpClient.get<Announcement[]>(this.baseURL, this.httpOptions);
+    }
+    addAnnouncement(annoucement: Announcement) {
+      const body = {...annoucement, category: annoucement.category.name};// body v-a primi tot ce e in ann inafara de
+      //category unde v-a primi doar numele
+      this.httpClient.post(this.baseURL, body, this.httpOptions).subscribe(response => {
+        return response;
+      });
+    }
+    deleteAnnouncement(id: string) {
+      this.httpClient.delete(this.baseURL + '/' + id, this.httpOptions).subscribe(response => {
+        return response;
+      });
+    }
 
-  get(id: number){
-    return this.announcements[id];
-  }
 
-  getId(announcement: Announcement) {
-    return this.announcements.indexOf(announcement);
-  }
+  // getAnnouncements() {
+  //   return of(this.announcements);
+  // }
 
-  addAnnouncement(announcement: Announcement) {
-    //this method will add an annoucement to the array an return the id of the announcement
-    //where the id = index
-    let newLength = this.announcements.push(announcement);
-    return newLength - 1;
-  }
+  // get(id: number){
+  //   return this.announcements[id];
+  // }
 
-  update(id: number, title: string, author: string, message: string, category: Category, imageUrl: string) {
-    let announcement = this.announcements[id];
-    announcement.title = title;
-    announcement.author = author;
-    announcement.message = message;
-    announcement.category = category;
-    announcement.imageUrl = imageUrl;
-  }
+  // getId(announcement: Announcement) {
+  //   return this.announcements.indexOf(announcement);
+  // }
 
-  delete(id: number) {
-    this.announcements.splice(id, 1);
-  }
+  // addAnnouncement(announcement: Announcement) {
+  //   //this method will add an annoucement to the array an return the id of the announcement
+  //   //where the id = index
+  //   let newLength = this.announcements.push(announcement);
+  //   return newLength - 1;
+  // }
 
-  readonly httpOption = {
-    header: new HttpHeaders({
-      'Content-Type': 'application/json',
-    })
-  }
+  // update(id: number, title: string, author: string, message: string, category: Category, imageUrl: string) {
+  //   let announcement = this.announcements[id];
+  //   announcement.title = title;
+  //   announcement.author = author;
+  //   announcement.message = message;
+  //   announcement.category = category;
+  //   announcement.imageUrl = imageUrl;
+  // }
+
+  // delete(id: number) {
+  //   this.announcements.splice(id, 1);
+  // }
+
 }

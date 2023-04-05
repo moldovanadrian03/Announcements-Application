@@ -11,8 +11,14 @@
   </div>
 
   <div>
-    <div *ngFor = "let fAnnouncement of filteredAnnouncements" class="announcements">
-      <app-announcement [message] = fAnnouncement.message [title] = fAnnouncement.title [author] = fAnnouncement.author></app-announcement>
+    <div *ngFor = "let announcement of filteredAnnouncements" class="announcements">
+      <app-announcement
+       [message] = announcement.message
+       [title] = announcement.title
+       [author] = announcement.author
+       [id] = announcement.id
+       [imageUrl]="announcement.imageUrl">
+      </app-announcement>
     </div>
   </div>
 

@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AnnouncementComponent } from './announcement/announcement.component';
 import { CategoriesComponent } from './categories/categories.component';
-import { MatButtonModule}  from '@angular/material/button';
+import { MatButtonModule, MatIconButton}  from '@angular/material/button';
 import { ByAuthorPipe } from './by-author.pipe';
 import { AddAnnouncementFormComponent } from './add-announcement-form/add-announcement-form.component';
 import { FormsModule } from '@angular/forms';
@@ -16,7 +16,7 @@ import { HomeComponent } from './home/home.component';
 import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +36,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     AppRoutingModule,
     MatCardModule,
     HttpClientModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 <mat-card class="announcement-container">
   <mat-card-header class="header-container">
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <img [src]="imageUrl" alt="Photo of a Shiba Inu">
     <!-- <img mat-card-image src="{{ imageUrl }}" alt="Photo of a Shiba Inu"> -->
   </mat-card-header>
 
@@ -9,6 +9,11 @@
     <p class="title">{{title}}</p>
     <p class="author">{{author | byAuthor}}</p>
     <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+  <div class="x-button" (click)="deleteAnnouncement(id)">
+    <button mat-icon-button class="x-button" (click)="deleteAnnouncement(id)" >
+      <mat-icon>clear</mat-icon>
+    </button>
   </div>
 </mat-card>
 
