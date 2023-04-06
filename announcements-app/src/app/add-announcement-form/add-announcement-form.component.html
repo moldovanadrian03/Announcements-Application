@@ -56,45 +56,7 @@
       </mat-card>
     </div>
 
-    <div class="form-container">
-      <mat-form-field class="full-width">
-        <mat-label>Title</mat-label>
-        <input matInput placeholder="Title" [(ngModel)]="title" name="title" required>
-      </mat-form-field>
 
-      <mat-form-field class="full-width">
-        <mat-label>Author</mat-label>
-        <input matInput placeholder="Author" [(ngModel)]="author" name="author" required>
-      </mat-form-field>
-
-      <mat-form-field class="full-width">
-        <mat-label>ImageUrl</mat-label>
-        <input matInput placeholder="ImageUrl" [(ngModel)]="imageUrl" name="imageUrl" required>
-      </mat-form-field>
-
-      <mat-form-field class="full-width">
-        <mat-label>Leave a message</mat-label>
-        <textarea matInput placeholder="..." [(ngModel)]="message" name="message"></textarea>
-      </mat-form-field>
-
-      <h4>Select category</h4>
-      <mat-form-field appearance="fill">
-        <mat-label>Category</mat-label>
-        <mat-select [(ngModel)]="selectedCategory" name="selectedCategory">
-          <mat-option *ngFor="let category of categories" [value]="category.id">
-            {{category.name}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <div class="buttons">
-        <button mat-fab extended color="primary" type="submit" class="btn btn-succes" [disabled]="!announcementForm.form.valid">Add</button>
-        <button mat-fab extended color="primary" type="button" class="btn btn-succes" [routerLink]="''">Cancel</button>
-      </div>
-      <mat-card-footer>
-        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-      </mat-card-footer>
-    </div>
   </form>
 </div>
 

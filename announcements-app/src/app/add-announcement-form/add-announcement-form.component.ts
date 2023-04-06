@@ -11,6 +11,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 })
 export class AddAnnouncementFormComponent {
   announcement: Announcement[];
+  id: string;
   title: string;
   author: string;
   imageUrl: string;
@@ -34,16 +35,16 @@ export class AddAnnouncementFormComponent {
     constructor(private announcementService: AnnouncementService, private router: Router) {}
 
     addAnnouncement():void {
-      let announcement: Announcement = {
-        id: undefined,
-        title: this.title,
-        author: this.author,
-        imageUrl: this.imageUrl,
-        message: this.message,
-        category: this.selectedCategory
-      }
-      console.log("Saved the announcement: ",announcement);
-      this.announcementService.addAnnouncement(announcement);
-      this.router.navigateByUrl('');
+      let announcement:Announcement={
+        title:this.title,
+        author:this.author,
+        imageUrl:this.imageUrl,
+        message:this.message,
+        Category:this.selectedCategory,
+        id:this.id
+        }
+        this.announcementService.addAnnouncementToServer(announcement);
+        console.log(announcement);
+        this.router.navigateByUrl("''");
     }
 }

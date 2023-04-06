@@ -58,21 +58,33 @@ export class AnnouncementService {
 
     //8
     getAnnouncements(): Observable<Announcement[]> {
-      console.log("Server Announcements: ");
+      // console.log("Server Announcements: ");
       return this.httpClient.get<Announcement[]>(this.baseURL, this.httpOptions);
     }
-    addAnnouncement(annoucement: Announcement) {
-      const body = {...annoucement, category: annoucement.category.name};// body v-a primi tot ce e in ann inafara de
-      //category unde v-a primi doar numele
+
+    addAnnouncementToServer(announcement: Announcement) {
+      const body = {...announcement, category: announcement.Category.name};
+      // body v-a primi tot ce e in ann inafara de category unde v-a primi doar numele
+
+      console.log(body);
+
       this.httpClient.post(this.baseURL, body, this.httpOptions).subscribe(response => {
         return response;
       });
+
     }
+
     deleteAnnouncement(id: string) {
-      this.httpClient.delete(this.baseURL + '/' + id, this.httpOptions).subscribe(response => {
+      console.log("Announcement ", id, " is deleted.");
+      this.httpClient.delete(this.baseURL + "/" + id, this.httpOptions).subscribe(response => {
         return response;
       });
     }
+
+
+
+
+
 
 
   // getAnnouncements() {

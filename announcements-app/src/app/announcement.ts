@@ -7,7 +7,7 @@ export interface Announcement {
   message: string;
   author: string;
 
-  category: Category;
+  Category: Category;
   imageUrl: string;
 
 }

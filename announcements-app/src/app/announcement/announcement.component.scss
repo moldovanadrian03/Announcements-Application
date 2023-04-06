@@ -1,7 +1,7 @@
 .announcement-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 
   padding: 30px;
@@ -13,19 +13,21 @@
   border-radius: 25px;
   .header-container{
     height: 200px;
-    width: 250px;
+    width: 300px;
+
+    margin-top: 5px;
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
 
     img {
       height: auto;
-      width: 220px;
+      width: 305px;
 
-      border: 2px solid #FFCACA;
-      border-radius: 15px;
+      // border: 2px solid #FFCACA;
+      border-radius: 20px;
     }
   }
   .body-container {
@@ -92,4 +94,3 @@
     }
   }
 }
-

@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit{
         this.filteredAnnouncements = this.announcement;
       }
       else{
-        this.filteredAnnouncements = this.filteredAnnouncements = this.announcement.filter(a => a.category.id === category.id);
+        this.filteredAnnouncements = this.filteredAnnouncements = this.announcement.filter(a => a.Category.id === category.id);
       }
       console.log("Am ajuns in app component cu " + category?.name);
     }

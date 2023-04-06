@@ -85,7 +85,9 @@ export class AnnouncementComponent implements OnInit {
   @Input() imageUrl: string;
   @Input() id: string;
 
-  //@Output() pentru a da get din nou
+  // @Output() announcementServ: AnnouncementService;
+  //pentru a da get din nou
+
   constructor(private announcementService: AnnouncementService) {}
 
   ngOnInit(): void {
