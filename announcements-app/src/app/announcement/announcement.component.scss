@@ -26,8 +26,22 @@
       height: auto;
       width: 305px;
 
+      opacity: 0.7;
+
+      transform: scale(0.8);
+
+      transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+
       // border: 2px solid #FFCACA;
       border-radius: 20px;
+      &:hover {
+        opacity: 1;
+
+        transition-delay: 0.05s;
+
+        transform: scale(1);
+      }
     }
   }
   .body-container {
