@@ -32,10 +32,17 @@ export class AddAnnouncementFormComponent {
       name: 'General'
     }];
 
-    constructor(private announcementService: AnnouncementService, private router: Router) {}
+    constructor(private announcementService: AnnouncementService, private router: Router, private activateRoute: ActivatedRoute)
+  {
+    this.activateRoute.params.subscribe(params => {
+      this.id = params['id'];
+      console.log(this.id);
+    });
+}
+
 
     addAnnouncement():void {
-      let announcement:Announcement={
+        let announcement:Announcement={
         title:this.title,
         author:this.author,
         imageUrl:this.imageUrl,
@@ -46,5 +53,9 @@ export class AddAnnouncementFormComponent {
         this.announcementService.addAnnouncementToServer(announcement);
         console.log(announcement);
         this.router.navigateByUrl("''");
+    }
+
+    updateAnnouncement(announcement: Announcement): void {
+
     }
 }

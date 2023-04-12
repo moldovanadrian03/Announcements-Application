@@ -1,13 +1,15 @@
 <div class="app-container">
 
-  <div>
-    <app-categories (selectedCategoryEmitter)="filterAnnouncementBasedOnCategory($event)"></app-categories>
-  </div>
+  <div class="top-bar">
+    <div>
+      <app-categories (selectedCategoryEmitter)="filterAnnouncementBasedOnCategory($event)"></app-categories>
+    </div>
 
-  <div class="buttons">
-    <button mat-fab extended color="primary" [routerLink]="'/add'">Add Annoucement</button>
-    <button mat-fab extended color="primary" [routerLink]="'/add'">Edit Announcement</button>
-    <button mat-fab extended color="primary" >Delete Annoucement</button>
+    <div class="buttons">
+      <button mat-fab extended color="primary" [routerLink]="'/add'">Add Annoucement</button>
+      <button mat-fab extended color="primary" [routerLink]="'/add'">Edit Announcement</button>
+      <button mat-fab extended color="primary" >Delete Annoucement</button>
+    </div>
   </div>
 
   <div>
@@ -17,7 +19,9 @@
        [title] = announcement.title
        [author] = announcement.author
        [id] = announcement.id
-       [imageUrl]="announcement.imageUrl">
+       [imageUrl]="announcement.imageUrl"
+       (getAnnouncementsFromService)="updateAnnoucementList($event)"
+       >
       </app-announcement>
     </div>
   </div>

@@ -58,7 +58,7 @@ export class AnnouncementService {
 
     //8
     getAnnouncements(): Observable<Announcement[]> {
-      // console.log("Server Announcements: ");
+      console.log("Server Announcements: ");
       return this.httpClient.get<Announcement[]>(this.baseURL, this.httpOptions);
     }
 
@@ -66,7 +66,7 @@ export class AnnouncementService {
       const body = {...announcement, category: announcement.Category.name};
       // body v-a primi tot ce e in ann inafara de category unde v-a primi doar numele
 
-      console.log(body);
+      console.log("Announcement: ", body, " is added.");
 
       this.httpClient.post(this.baseURL, body, this.httpOptions).subscribe(response => {
         return response;
@@ -74,15 +74,23 @@ export class AnnouncementService {
 
     }
 
-    deleteAnnouncement(id: string) {
-      console.log("Announcement ", id, " is deleted.");
-      this.httpClient.delete(this.baseURL + "/" + id, this.httpOptions).subscribe(response => {
+    updateAnnouncement(announcement: Announcement) {
+      let announcementId = announcement.id;
+      const body = {... announcement, category: announcement.Category.name};
+      console.log("Announcement ", announcementId, ": ", body, " is updated.");
+
+      this.httpClient.put(this.baseURL, body, this.httpOptions).subscribe(response => {
         return response;
       });
     }
 
+    deleteAnnouncement(id: string) {
+      console.log("Announcement ", id, " is deleted.");
+      return this.httpClient.delete(this.baseURL + "/" + id, this.httpOptions);
+    }
 
 
+  //https://material.angular.io/assets/img/examples/shiba2.jpg
 
 
 

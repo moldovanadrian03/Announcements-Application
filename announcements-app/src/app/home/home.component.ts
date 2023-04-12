@@ -40,4 +40,14 @@ export class HomeComponent implements OnInit{
       }
       console.log("Am ajuns in app component cu " + category?.name);
     }
+    updateAnnoucementList(update: boolean){
+      if(update) {
+        this.announcementService.getAnnouncements().subscribe(announcements => {
+          console.log("Announcements list: ", announcements);
+          this.announcement = announcements;
+          this.filteredAnnouncements = this.announcement;
+
+        });
+      }
+    }
 }
