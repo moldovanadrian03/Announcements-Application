@@ -63,12 +63,14 @@ export class AnnouncementService {
     }
 
     addAnnouncementToServer(announcement: Announcement) {
-      const body = {...announcement, category: announcement.Category.name};
+      // const body = {...announcement};
+
+      // const body = {...announcement, category: announcement.categoryId};
       // body v-a primi tot ce e in ann inafara de category unde v-a primi doar numele
 
-      console.log("Announcement: ", body, " is added.");
+      console.log("Announcement: ", announcement, " is added.");
 
-      this.httpClient.post(this.baseURL, body, this.httpOptions).subscribe(response => {
+      this.httpClient.post(this.baseURL, announcement, this.httpOptions).subscribe(response => {
         return response;
       });
 
@@ -76,10 +78,9 @@ export class AnnouncementService {
 
     updateAnnouncement(announcement: Announcement) {
       let announcementId = announcement.id;
-      const body = {... announcement, category: announcement.Category.name};
-      console.log("Announcement ", announcementId, ": ", body, " is updated.");
+      console.log("Announcement ", announcementId, ": ", announcement, " is updated.");
 
-      this.httpClient.put(this.baseURL, body, this.httpOptions).subscribe(response => {
+      this.httpClient.put(this.baseURL, announcement, this.httpOptions).subscribe(response => {
         return response;
       });
     }

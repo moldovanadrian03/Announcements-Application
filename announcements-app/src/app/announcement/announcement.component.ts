@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AnnouncementService } from '../services/announcement.service';
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
+import { Announcement } from '../announcement';
 
 @Component({
   selector: 'app-announcement',
@@ -93,19 +94,23 @@ export class AnnouncementComponent implements OnInit {
   ngOnInit(): void {
     this.announcementService.getAnnouncements().subscribe((response) => {
       console.log(response);
-    })
+    });
   }
 
-  getItemsFromService(value: any) {
-    this.getAnnouncementsFromService.emit(value);
-  }
+  // getItemsFromService(value: any) {
+  //   this.getAnnouncementsFromService.emit(value);
+  // }
 
+  // addAnnouncement(announcement: Announcement) {
+  //   this.announcementService.addAnnouncementToServer(announcement).subscribe(response => {
+  //     console.log(response);
+  //   });
+  // }
   deleteAnnouncement(id: string) {
     console.log("id: ", id);
     this.announcementService.deleteAnnouncement(id).subscribe(response => {
       console.log(response);
       this.getAnnouncementsFromService.emit(true);
-        });
-
+    });
   }
 }

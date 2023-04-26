@@ -16,7 +16,7 @@ export class AddAnnouncementFormComponent {
   author: string;
   imageUrl: string;
   message: string;
-  selectedCategory: Category;
+  selectedCategory: string;
 
   categories: Category[] = [
     {
@@ -41,13 +41,13 @@ export class AddAnnouncementFormComponent {
 }
 
 
-    addAnnouncement():void {
+    addAnnouncement(): void {
         let announcement:Announcement={
         title:this.title,
         author:this.author,
         imageUrl:this.imageUrl,
         message:this.message,
-        Category:this.selectedCategory,
+        categoryId:this.selectedCategory,
         id:this.id
         }
         this.announcementService.addAnnouncementToServer(announcement);

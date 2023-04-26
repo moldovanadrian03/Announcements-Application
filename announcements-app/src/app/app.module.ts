@@ -17,7 +17,6 @@ import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatIconModule } from '@angular/material/icon';
-import { NgOptimizedImage } from '@angular/common'
 
 @NgModule({
   declarations: [
@@ -40,7 +39,6 @@ import { NgOptimizedImage } from '@angular/common'
     HttpClientModule,
     MatProgressBarModule,
     MatIconModule,
-    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]
