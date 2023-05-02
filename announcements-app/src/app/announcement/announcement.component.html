@@ -3,7 +3,8 @@
     <img [src] = "imageUrl" >
   </mat-card-header>
 
-  <div class="body-container">
+  <div class="body-container"
+  [routerLink]="'/update/{{id}}'">
     <p class="message">{{message}}</p>
     <p class="title">{{title}}</p>
     <p class="author">{{author | byAuthor}}</p>
