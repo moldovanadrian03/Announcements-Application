@@ -1,6 +1,8 @@
 <mat-card class="announcement-container">
-  <mat-card-header class="header-container">
-    <img [src] = "imageUrl" >
+  <mat-card-header class="header-container"
+  [routerLink]="'/update/{{id}}'">
+    <img [src] = "imageUrl"
+    [routerLink]="'/update/{{id}}'">
   </mat-card-header>
 
   <div class="body-container"
