@@ -17,6 +17,7 @@ import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatIconModule } from '@angular/material/icon';
+import { EditAnnouncementComponent } from './edit-announcement/edit-announcement.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MatIconModule } from '@angular/material/icon';
     CategoriesComponent,
     ByAuthorPipe,
     AddAnnouncementFormComponent,
-    HomeComponent
+    HomeComponent,
+    EditAnnouncementComponent
     ],
   imports: [
     BrowserModule,

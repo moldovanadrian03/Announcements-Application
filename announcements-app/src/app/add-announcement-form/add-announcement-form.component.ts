@@ -55,7 +55,10 @@ export class AddAnnouncementFormComponent {
         this.router.navigateByUrl("''");
     }
 
-    updateAnnouncement(announcement: Announcement): void {
+    // updateAnnouncement(announcement: Announcement): void {
+    //     let newAnn: Announcement={
+    //       title: announcement.title;
 
-    }
+    //     }
+    // }
 }

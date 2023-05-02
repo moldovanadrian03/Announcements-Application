@@ -63,8 +63,6 @@ export class AnnouncementService {
     }
 
     addAnnouncementToServer(announcement: Announcement) {
-      // const body = {...announcement};
-
       // const body = {...announcement, category: announcement.categoryId};
       // body v-a primi tot ce e in ann inafara de category unde v-a primi doar numele
 
