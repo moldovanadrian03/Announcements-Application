@@ -9,7 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class AnnouncementService {
   baseURL = "https://newsapi20221108120432.azurewebsites.net/api/Announcements";
-
+  baseURLNew = "http://localhost:7188;http://localhost:5110";
   readonly httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
