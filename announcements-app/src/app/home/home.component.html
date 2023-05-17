@@ -13,6 +13,7 @@
   </div>
 
   <div>
+    <p> {{ notificationMessage }} </p>
     <div *ngFor = "let announcement of filteredAnnouncements" class="announcements">
       <app-announcement
        [message] = announcement.message

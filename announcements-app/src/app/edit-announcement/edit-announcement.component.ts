@@ -36,23 +36,26 @@ export class EditAnnouncementComponent {
 
     constructor(private announcementService: AnnouncementService, private activateRoute: ActivatedRoute, private router: Router)
   {
-    this.activateRoute.params.subscribe(params => {
-      this.id = params['id'];
-      console.log(this.id);
-    });
+    // this.activateRoute.params.subscribe(params => {
+    //   this.id = params['id'];
+    //   console.log(this.id);
+    // });
 }
   updateAnnouncement(form: NgForm) {
-    let newAnn: Announcement={
-      title: form.value.title,
-      author:form.value.author,
-      imageUrl:form.value.imageUrl,
-      message:form.value.message,
-      categoryId:form.value.categoryId,
-      id:form.value.id
-    }
-    this.announcementService.updateAnnouncement(newAnn);
-    console.log(newAnn);
-    this.router.navigateByUrl("''");
+     this.announcementService.getAnnouncementById(this.id).subscribe(r => {
+      console.log(r[0]);
+      let newAnn: Announcement={
+        title: form.value.title,
+        author:form.value.author,
+        imageUrl:form.value.imageUrl,
+        message:form.value.message,
+        categoryId:form.value.selectedCategory,
+        id:r[0].id
+      }
+      this.announcementService.updateAnnouncement(newAnn);
+      this.router.navigateByUrl("''");
+    });
+
   }
 
 }

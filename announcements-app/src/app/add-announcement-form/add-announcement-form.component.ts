@@ -3,6 +3,7 @@ import { Announcement } from '../announcement';
 import { Category } from '../category';
 import { AnnouncementService } from '../services/announcement.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-add-announcement-form',
@@ -32,16 +33,20 @@ export class AddAnnouncementFormComponent {
       name: 'General'
     }];
 
-    constructor(private announcementService: AnnouncementService, private router: Router, private activateRoute: ActivatedRoute)
-  {
-    this.activateRoute.params.subscribe(params => {
-      this.id = params['id'];
-      console.log(this.id);
-    });
+    constructor(
+      private announcementService: AnnouncementService,
+      private router: Router,
+      private activateRoute: ActivatedRoute,
+      private notificationService: NotificationService){
+
+        this.activateRoute.params.subscribe(params => {
+          this.id = params['id'];
+          console.log(this.id);
+        });
 }
 
 
-    addAnnouncement(): void {
+    addAnnouncement() {
         let announcement:Announcement={
         title:this.title,
         author:this.author,
@@ -50,15 +55,12 @@ export class AddAnnouncementFormComponent {
         categoryId:this.selectedCategory,
         id:this.id
         }
-        this.announcementService.addAnnouncementToServer(announcement);
+        this.announcementService.addAnnouncementToServer(announcement)
+        // .subscribe(r => {
+        //   this.notificationService.sendMessage("BroadcastMessage", [r])
+        //})
+        ;
         console.log(announcement);
         this.router.navigateByUrl("''");
     }
-
-    // updateAnnouncement(announcement: Announcement): void {
-    //     let newAnn: Announcement={
-    //       title: announcement.title;
-
-    //     }
-    // }
 }

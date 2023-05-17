@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { EditAnnouncementComponent } from './edit-announcement/edit-announcement.component';
+import * as signalR from '@microsoft/signalr';
+import { HubConnectionBuilder } from '@microsoft/signalr';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,10 @@ import { EditAnnouncementComponent } from './edit-announcement/edit-announcement
     MatProgressBarModule,
     MatIconModule,
   ],
-  providers: [],
+  providers: [
+    HubConnectionBuilder,
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

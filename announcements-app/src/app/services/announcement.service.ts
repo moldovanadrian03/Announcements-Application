@@ -8,8 +8,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AnnouncementService {
-  baseURL = "https://newsapi20221108120432.azurewebsites.net/api/Announcements";
-  baseURLNew = "http://localhost:7188;http://localhost:5110";
+  baseURL2 = "https://newsapi20221108120432.azurewebsites.net/api/Announcements";
+  baseURL = "http://localhost:7188/api";
+
   readonly httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
@@ -56,10 +57,15 @@ export class AnnouncementService {
     console.log("Service was called.");
   }
 
+    getAnnouncementById(id: string){
+      console.log("Ann: ");
+      return this.httpClient.get<Announcement>(this.baseURL + "/Ann/", this.httpOptions);
+    }
+
     //8
     getAnnouncements(): Observable<Announcement[]> {
       console.log("Server Announcements: ");
-      return this.httpClient.get<Announcement[]>(this.baseURL, this.httpOptions);
+      return this.httpClient.get<Announcement[]>(this.baseURL + "/Ann", this.httpOptions);
     }
 
     addAnnouncementToServer(announcement: Announcement) {
@@ -68,7 +74,7 @@ export class AnnouncementService {
 
       console.log("Announcement: ", announcement, " is added.");
 
-      this.httpClient.post(this.baseURL, announcement, this.httpOptions).subscribe(response => {
+      this.httpClient.post(this.baseURL + "/Ann", announcement, this.httpOptions).subscribe(response => {
         return response;
       });
 
@@ -77,15 +83,15 @@ export class AnnouncementService {
     updateAnnouncement(announcement: Announcement) {
       let announcementId = announcement.id;
       console.log("Announcement ", announcementId, ": ", announcement, " is updated.");
-
-      this.httpClient.put(this.baseURL, announcement, this.httpOptions).subscribe(response => {
+      console.log(announcement);
+      this.httpClient.put(this.baseURL + "/Ann", announcement, this.httpOptions).subscribe(response => {
         return response;
       });
     }
 
     deleteAnnouncement(id: string) {
       console.log("Announcement ", id, " is deleted.");
-      return this.httpClient.delete(this.baseURL + "/" + id, this.httpOptions);
+      return this.httpClient.delete(this.baseURL + "/Ann/" + id, this.httpOptions);
     }
 
 

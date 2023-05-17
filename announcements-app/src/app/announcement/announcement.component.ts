@@ -97,19 +97,13 @@ export class AnnouncementComponent implements OnInit {
     });
   }
 
-  // getItemsFromService(value: any) {
-  //   this.getAnnouncementsFromService.emit(value);
-  // }
 
-  // addAnnouncement(announcement: Announcement) {
-  //   this.announcementService.addAnnouncementToServer(announcement).subscribe(response => {
-  //     console.log(response);
-  //   });
-  // }
+
   deleteAnnouncement(id: string) {
     console.log("id: ", id);
     this.announcementService.deleteAnnouncement(id).subscribe(response => {
       console.log(response);
+
       this.getAnnouncementsFromService.emit(true);
     });
   }
